@@ -12,7 +12,7 @@ W1.runw()"""
 w1=Tk()
 w1.geometry('440x400')
 w1.title('w1')
-
+w1.mainloop()
 w=Tk()
 w.geometry('440x400')
 w.mainloop()
