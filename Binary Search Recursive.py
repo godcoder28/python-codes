@@ -1,0 +1,1 @@
+def bin_search()
