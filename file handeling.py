@@ -53,7 +53,7 @@ def count(f):
 
 """
 # =============Q5
-
+"""
 f = None
 for i in range(5):
     with open("abc.txt", "w") as f:
@@ -62,4 +62,10 @@ for i in range(5):
             print(f.closed, '2')
             break
         print(f.closed, '3')
-    print(f.closed)
+    print(f.closed)"""
+
+n = int(input("Enter No of lines: "))
+file = open("f.txt", 'r')
+x =file.readlines()
+for i in range(n):
+    print(x[i])
