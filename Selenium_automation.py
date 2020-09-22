@@ -23,10 +23,12 @@ password.submit()
 liveclass = driver.get("https://online.vidyamandir.com/liveclass/list")
 
 while True:
-    try:
-        element = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "ffbgneryjnbrdfwebiner"))
-        )
-        print("try")
-    except:
-        print("timeout")
+    element = WebDriverWait(driver, 5).until(
+        EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, "Class"))
+    )
+    link = driver.find_elements_by_partial_link_text("Join")
+    url = []
+    for i in link:
+        url.append(i.get_property("href"))
+
+
