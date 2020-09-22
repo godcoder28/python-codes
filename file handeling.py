@@ -66,6 +66,6 @@ for i in range(5):
 
 n = int(input("Enter No of lines: "))
 file = open("f.txt", 'r')
-x =file.readlines()
+x = file.readlines()
 for i in range(n):
     print(x[i])

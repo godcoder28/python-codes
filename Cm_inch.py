@@ -3,8 +3,8 @@
 # MADE by: Shivang Gupta
 
 cms = int(input("Enter Height In CMs:"))
-inch = cms/2.5
-feet = int(inch//12)
-inch2 = (inch%12)
+inch = cms / 2.5
+feet = int(inch // 12)
+inch2 = (inch % 12)
 g = float("{0:.2f}".format(inch2))
-print("Height In Feet & Inches Is:", feet,"ft", g, "''")
+print("Height In Feet & Inches Is:", feet, "ft", g, "''")

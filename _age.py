@@ -8,20 +8,19 @@ Percentage	Grade
 >=50 and <60	C
 >=40 and <50	D
          <40	                    E  """
-m1=float(input("Enter the Marks: "))
-m2=float(input("Enter the Marks: "))
-m3=float(input("Enter the Marks: "))
-p=int((m1+m2+m3)/3)
-print("Sum of marks is: ",m1+m2+m3,"and the Percentage is: ",p,"%",'\n',"The Grade is: " )
-if p>=90:
+m1 = float(input("Enter the Marks: "))
+m2 = float(input("Enter the Marks: "))
+m3 = float(input("Enter the Marks: "))
+p = int((m1 + m2 + m3) / 3)
+print("Sum of marks is: ", m1 + m2 + m3, "and the Percentage is: ", p, "%", '\n', "The Grade is: ")
+if p >= 90:
     print('A1')
-elif p>=80:
+elif p >= 80:
     print('A2')
-elif p>=70:
+elif p >= 70:
     print('B1')
-elif p>=60:
+elif p >= 60:
     print('B2')
-elif p>=50:
+elif p >= 50:
     print('C')
-print('D') if p>=40 else print('E')
-    
+print('D') if p >= 40 else print('E')
