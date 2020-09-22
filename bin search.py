@@ -8,7 +8,7 @@ e = int(input("Enter an element to be searched: "))
 l2 = sorted(li)
 
 
-def bin_sort(arr, item):
+def bin(arr, item):
     while True:
         mid = int(len(arr) / 2)
         if arr[mid] == item:
@@ -18,7 +18,7 @@ def bin_sort(arr, item):
         arr = arr[:mid] if arr[mid] > item else arr[mid + 1:]
 
 
-if bin_sort(l2, e) == False:
+if bin(l2, e) == False:
     print("The element is not in the list.")
 else:
-    print("The item is found at position: ", li.index(bin_sort(l2, e)) + 1)
+    print("The item is found at position: ", li.index(bin(l2, e)) + 1)
