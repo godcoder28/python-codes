@@ -22,3 +22,11 @@ print(l)
 
 item = int(input("Enter item to be searched: "))
 print("Element found at: ", binary(l, item))
+
+
+
+import csv
+data = input("enter csv")
+with open("file.csv", mode='w') as file:
+    write = csv.writer(file, delimiter=',')
+    write.writerow(data.split(','))

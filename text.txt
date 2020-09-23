@@ -1,4 +1,0 @@
-hello world
-file handling
-3 line
-4 line
