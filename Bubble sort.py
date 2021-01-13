@@ -1,5 +1,3 @@
-# WAP To input a list and perform bubble sort.
-# Made By: Shivang Gupta
 L1 = []
 n = int(input("Enter No of Elements in the list: "))
 for i in range(n):

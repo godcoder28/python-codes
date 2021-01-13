@@ -3,7 +3,6 @@
 23
 456
 78910
-Made By: Shivang Gupta
 """
 x = 1
 for i in range(1, 5):

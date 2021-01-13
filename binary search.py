@@ -1,3 +1,5 @@
+# list indexs
+
 li = []
 sli = []
 n = int(input("Enter the No of elements: "))
@@ -7,7 +9,7 @@ e = int(input("Enter an element to be searched: "))
 sli = sorted(li)
 
 
-def binary_sort(beg=0, end=n - 1):
+def binary(beg=0, end=n - 1):
     while True:
         mid = (beg + end) // 2
         if sli[mid] == e:
@@ -22,7 +24,7 @@ def binary_sort(beg=0, end=n - 1):
             beg = mid + 1
 
 
-ans = binary_sort()
+ans = binary()
 if ans == -1:
     print("The element is not present in the list.")
 else:

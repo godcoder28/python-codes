@@ -1,12 +1,9 @@
 old_file = open("data_old.txt", "r")
 data = old_file.readlines()
 
-new_file = open("data_new.txt", "a+")
+new_file = open("data_new_2.txt", "w+")
 for i in data:
-    if "a" in i:
-        continue
-    else:
+    if "p" in i:
         new_file.write(i)
-
 new_file.seek(0)
 print(new_file.read())

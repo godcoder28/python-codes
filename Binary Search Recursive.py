@@ -1,32 +1,20 @@
-import random
-
-
-def binary(list, element):
-    n = len(list) - 1
-    if len(list) > 0:
-        if element == list[n // 2]:
-            return l.index(list[n // 2]) + 1
-        elif element > list[n // 2]:
-            return binary(list[n // 2 + 1::], element)
+def binary(array, element):
+    n = len(array) - 1
+    if len(array) > 0:
+        if element == array[n // 2]:
+            return l.index(array[n // 2]) + 1
+        elif element > array[n // 2]:
+            return binary(array[n // 2 + 1::], element)
         else:
-            return binary(list[0:n // 2], element)
+            return binary(array[0:n // 2], element)
     else:
         return None
 
 
 l = []
-for i in range(10):
-    l.append(random.randint(1, 100))
-l.sort()
-print(l)
-
-item = int(input("Enter item to be searched: "))
-print("Element found at: ", binary(l, item))
-
-
-
-import csv
-data = input("enter csv")
-with open("file.csv", mode='w') as file:
-    write = csv.writer(file, delimiter=',')
-    write.writerow(data.split(','))
+x = int(input("Enter no of elements in the list: "))
+for i in range(x):
+    l.append(int(input("Enter element: ")))
+e = int(input("Enter element to be searched: "))
+print("The list given is: ", l)
+print("The element is found at position: ", binary(sorted(l), e))
