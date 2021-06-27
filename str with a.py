@@ -1,7 +1,9 @@
 old_file = open("data_old.txt", "r")
 data = old_file.readlines()
+old_file.seek(0)
+print(old_file.read(), '\n')
 
-new_file = open("data_new.txt", "a+")
+new_file = open("data_new.txt", "w+")
 for i in data:
     if "a" in i:
         continue

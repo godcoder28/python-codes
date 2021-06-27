@@ -1,3 +1,5 @@
-hello
-this is sample text
-this is to test python files
+This is a sample text
+if the file ends with n
+it will be printed
+this is a test file for practical data
+i like to code and write programmes. n

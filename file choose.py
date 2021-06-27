@@ -1,6 +1,6 @@
-from tkinter import Tk     
-from tkinter.filedialog import askopenfilename
+from tkinter import Tk
+from tkinter.filedialog import askdirectory, asksaveasfile
 
-Tk().withdraw() 
-filename = askopenfilename() 
+Tk().withdraw()
+filename = asksaveasfile(mode='wb')
 print(filename)

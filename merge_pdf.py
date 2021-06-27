@@ -1,48 +1,51 @@
-from PyPDF2 import PdfFileReader, PdfFileWriter
-import os
 import glob
+import os
+from tkinter import Tk
+from tkinter.filedialog import askdirectory, asksaveasfile
 
-folder = input("Enter Path of Folder Containg pdfs: ")
-output = input("Enter Path of Output file: ")
+from PyPDF2 import PdfFileReader, PdfFileWriter
+
+Tk().withdraw()
+folder = askdirectory()
+
+Tk().withdraw()
+output = asksaveasfile(mode="wb")
+
 choice = input("Delete previous files? ")
-paths = glob.glob(folder)
+paths = glob.glob(folder + '\*.pdf')
+
 
 def pdf_merge(inputs: [str], output: str, delete: bool = False):
     """
     Merge multiple Pdf input files in one output file.
     :param inputs: input files
-    :param output: output file
+    :param output: opened output file
     :param delete: delete input files after completion if true
 
     """
     writer = PdfFileWriter()
-    if os.path.isfile(output):
-        ans = input(
-            "The file '%s' already exists. "
-            "Overwrite? Yes/Abort [Y/a]: " % output
-        ).lower()
-        if ans == "a":
-            return
-
-    outputfile = open(output, "wb")
     try:
         infiles = []
         for filename in inputs:
             f = open(filename, "rb")
-            reader = PdfFileReader(f)
+            reader = PdfFileReader(f, strict=False)
             for page in reader.pages:
                 writer.addPage(page)
             infiles.append(f)
-        writer.write(outputfile)
+        writer.write(output)
     except FileNotFoundError as e:
         print(e.strerror + ": " + e.filename)
     finally:
-        outputfile.close()
+        output.close()
         for f in infiles:
             f.close()
     if delete:
         for filename in inputs:
             os.remove(filename)
-print(paths,output)
+        try:
+            os.removedirs(folder)
+        except:
+            pass
 
-#pdf_merge(paths, output)
+
+pdf_merge(paths, output)

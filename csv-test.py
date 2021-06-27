@@ -1,5 +1,9 @@
 import csv
-old_file = open("csv_o.csv", 'r')
-new_file = open("csv_n.csv", 'w')
+file = open("student.csv", 'r')
+reader = csv.reader(file)
 
-reader = csv.
+for i in list(reader):
+    print(i)
+
+file.close()
+  

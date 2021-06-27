@@ -1,0 +1,2 @@
+This is simple text file
+I love to code
